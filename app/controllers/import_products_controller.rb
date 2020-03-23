@@ -5,8 +5,8 @@ class ImportProductsController < ApplicationController
   end
 
   def create
-    @errors = @store.products.import(params[:file], @store)
-    
+    @errors = Product.import(params[:file], @store)
+
     if params[:file].nil? || @errors.any?
       render 'new'
     else

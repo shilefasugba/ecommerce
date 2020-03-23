@@ -1,7 +1,7 @@
 class StoreOrderWorker
   include Sidekiq::Worker
   
-  def perform(store_order_id)  
+  def perform(store_order_id)
     store_order = StoreOrder.where(id: store_order_id).first
     
     if store_order.present? && store_order.status != 'success'

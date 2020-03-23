@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     @product = @store.products.create(product_params)
 
     if @product.valid?
-      redirect_to store_products_path(@store), notice: 'Created success.'
+      redirect_to store_products_path(@store), notice: 'Product successfully created.'
     else
       render 'new'
     end
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to store_products_path(@store), notice: 'Updated success.'
+      redirect_to store_products_path(@store), notice: 'Product successfully updated.'
     else
       render 'edit'
     end
@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
 
-    redirect_to store_products_path(@store), notice: 'Deleted success.'
+    redirect_to store_products_path(@store), notice: 'Product successfully deleted'
   end
   
   private 

@@ -9,7 +9,7 @@ class StoreOrdersController < ApplicationController
     @store_order = @store.store_orders.find(params[:id])
     StoreOrderWorker.new.perform(params[:id])
 
-    redirect_to store_store_orders_path(@store), notice: 'Process was runed'
+    redirect_to store_store_orders_path(@store), notice: 'Process started'
   end
 
   private

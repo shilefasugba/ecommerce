@@ -14,7 +14,7 @@ class ShippingProfilesController < ApplicationController
     @shipping_profile = @store.shipping_profiles.create(shipping_profile_params)
 
     if @shipping_profile.valid?
-      redirect_to store_shipping_profiles_path(@store), notice: 'Created success.'
+      redirect_to store_shipping_profiles_path(@store), notice: 'Shipping profile successfully created.'
     else
       render 'new'
     end
@@ -25,7 +25,7 @@ class ShippingProfilesController < ApplicationController
 
   def update
     if @shipping_profile.update(shipping_profile_params)
-      redirect_to store_shipping_profiles_path(@store), notice: 'Updated success.'
+      redirect_to store_shipping_profiles_path(@store), notice: 'Shipping profile successfully updated.'
     else
       render 'edit'
     end
@@ -33,7 +33,7 @@ class ShippingProfilesController < ApplicationController
 
   def destroy
     @shipping_profile.destroy
-    redirect_to store_shipping_profiles_path(@store), notice: 'Deleted success.'
+    redirect_to store_shipping_profiles_path(@store), notice: 'Shipping profile successfully deleted.'
   end
 
 
