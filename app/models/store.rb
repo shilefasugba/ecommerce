@@ -15,7 +15,4 @@ class Store < ActiveRecord::Base
   
   accepts_nested_attributes_for :shipping_profiles, allow_destroy: true
 
-  before_validation do
-    
-  end
 end

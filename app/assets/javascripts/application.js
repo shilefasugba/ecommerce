@@ -13,28 +13,6 @@
 //= require jquery3
 //= require jquery_ujs
 //= require twitter/bootstrap
-// require popper
-// require bootstrap
 //= require tinymce
 //= require tinymce-jquery
 //= require_tree .
-
-window.toogleAddresses = function(el){
-    var wr = $('.' + el.id + '_fields')
-
-    if($(el).val() == ''){
-      wr.show()
-    } else {
-      wr.hide()
-    }
-  }
-
-$(function(){
-  $('#order_billing_address_id, #order_shipping_address_id').on('change', function(){
-    window.toogleAddresses(this)   
-  });
-
-  $.each($('#order_billing_address_id, #order_shipping_address_id'), function(index, item) {
-    window.toogleAddresses(item)    
-  });
-});
