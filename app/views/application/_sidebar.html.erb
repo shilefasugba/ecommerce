@@ -1,0 +1,31 @@
+<div class="col-sm-3 col-md-2 sidebar">
+  <ul class="nav nav-sidebar">
+    <%= menu_item stores_path do %>
+      My Stores
+      <span class="badge">
+        <%= current_user.stores.count %>
+      </span>
+    <% end %>
+
+    <%= menu_item products_path do %>
+      Products
+      <span class="badge">
+        <%= Product.count %>
+      </span>
+    <% end %>
+
+    <%= menu_item cart_items_path do %>
+      Cart
+      <span class="badge">
+        <%= current_user.cart_items.in_cart.count %>
+      </span>
+    <% end %>
+
+    <%= menu_item orders_path do %>
+      Orders
+      <span class="badge">
+        <%= current_user.orders.count %>
+      </span>
+    <% end %>
+  </ul>
+</div>

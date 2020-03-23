@@ -1,0 +1,31 @@
+<div class="col-md-6">
+  <h4>
+    <%= shipping_profile.title %>
+    
+    <%= link_to edit_store_shipping_profile_path(@store, shipping_profile), class: 'btn btn-default pull-right' do %>
+      Edit
+    <% end %>
+    <%= link_to store_shipping_profile_path(@store, shipping_profile), class: 'btn btn-default pull-right', method: :delete do %>
+      Delete
+    <% end %>
+    
+    
+  </h4>
+  <dl class="dl-horizontal">
+    <dt>Store:</dt>
+    <dd><%= shipping_profile.store.name %></dd>
+    <dt>Shipping type:</dt>
+    <dd><%= shipping_profile.shipping_type %></dd>
+    <dt>Country:</dt>
+    <dd><%= shipping_profile.country.try(:name) %></dd>
+    <dt>All countries:</dt>
+    <dd><%= shipping_profile.all_countries %></dd>
+    <dt>Base price:</dt>
+    <dd><%= shipping_profile.base_price %></dd>
+    <dt>Per item:</dt>
+    <dd><%= shipping_profile.per_item %></dd>
+    <dt>Extra item:</dt>
+    <dd><%= shipping_profile.extra_item %></dd>
+  </dl>
+  <hr/>
+</div>

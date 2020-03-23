@@ -1,0 +1,12 @@
+<div class="col-md-6">
+  <h4>
+    Status: <%= order.status %>
+  </h4>
+  <dl class="dl-horizontal">
+    <dt>Stores count:</dt>
+    <dd><%= order.store_orders.count %></dd>
+    <dt>Details:</dt>
+    <dd><%= link_to 'Details', order, class: 'btn btn-default' %></dd>
+  </dl>
+  <hr/>
+</div>

@@ -1,0 +1,6 @@
+title,description,category_name,track_inventory,stock_count,shipping_weight_lbs,price,sku,image_urls_raw,slug,tax,shipping_profile_types
+description,Descriptio,Category 1,true,10,10.0,200.0,sku,"http://localhost:3000/admin/stores/2/products/product-10/edit
+http://localhost:3000/admin/stores/2/products/product-10/edit
+http://localhost:3000/admin/stores/2/products/product-10/edit
+http://localhost:3000/admin/stores/2/products/product-10/edit
+http://localhost:3000/admin/stores/2/products/product-10/edit",product-12,20.0,flat

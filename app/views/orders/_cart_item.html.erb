@@ -1,0 +1,12 @@
+<% if store.cart_items.by_order_id(@order.id).any? %>
+  <div class="col-md-6">
+    <h4>
+      <%= store.name %>
+    </h4>
+
+    <% store.cart_items.by_order_id(@order.id).each do |cart_item| %>
+      <%= cart_item.product.title %> / Count: <%= cart_item.count %> / Price: <%= cart_item.product.price %> 
+      <hr/>
+    <% end %>
+  </div>
+<% end %>

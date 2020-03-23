@@ -1,0 +1,5 @@
+:queues:
+  - [default, 5]
+
+:limits:
+  default: 1

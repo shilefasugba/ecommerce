@@ -1,0 +1,33 @@
+<%= form_for [@store, @shipping_profile] do |f| %>
+  <div class="form-group">
+    <h4>Shipping type</h4>
+    <%= f.select :shipping_type, options_for_select(ShippingProfile.shipping_types.map { |s| [s[0].humanize, s[0]] }, @shipping_profile.shipping_type), class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Country</h4>
+    <%= f.select :country_id, options_for_select(Country.all.map { |s| [s.name, s.id] }, @shipping_profile.country_id), class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>All countries</h4>
+    <%= f.check_box :all_countries, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Base price</h4>
+    <%= f.text_field :base_price, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Per item</h4>
+    <%= f.text_field :per_item, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Extra item</h4>
+    <%= f.text_field :extra_item, class: 'form-control' %>
+  </div>
+
+  <%= f.submit 'Add', class: 'btn btn-default' %>
+<% end %>

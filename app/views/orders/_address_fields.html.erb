@@ -1,0 +1,29 @@
+<div class="form-group">
+  <label>Address1</label>
+  <%= f.text_field :address1, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <label>Address2</label>
+  <%= f.text_field :address2, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <label>State</label>
+  <%= f.select :state_province_id, options_for_select(StateProvince.all.map { |s| [s.name, s.id] }),class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <label>City</label>
+  <%= f.text_field :city, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <label>First name</label>
+  <%= f.text_field :first_name, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <label>Last name</label>
+  <%= f.text_field :last_name, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <label>Postal code</label>
+  <%= f.text_field :postal_code, class: 'form-control' %>
+</div>

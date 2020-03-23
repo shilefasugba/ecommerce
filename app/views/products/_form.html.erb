@@ -1,0 +1,69 @@
+<%= form_for [@store, @product] do |f| %>
+  <div class="form-group">
+    <h4>Title</h4>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Description</h4>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Category</h4>
+    <%= f.select :category_id, options_for_select(Category.all.map { |s| [s.name, s.id] }, @product.category_id ), class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Track inventory</h4>
+    <%= f.check_box :track_inventory, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Stock count</h4>
+    <%= f.text_field :stock_count, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Shipping weight lbs</h4>
+    <%= f.text_field :shipping_weight_lbs, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Price</h4>
+    <%= f.text_field :price, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Sku</h4>
+    <%= f.text_field :sku, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Slug</h4>
+    <%= f.text_field :slug, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Tax</h4>
+    <%= f.text_field :tax, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Images</h4>
+    <%= f.text_area :image_urls_raw, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <h4>Shipping profiles
+    <%= link_to new_store_shipping_profile_path(@store), class: 'btn btn-default', target: :blank do %>
+      Add
+    <% end %>
+    </h4>
+    
+    <%= f.select :shipping_profile_ids, options_for_select(@store.shipping_profiles.all.map { |s| [s.title, s.id] }, @product.shipping_profile_ids ), {}, { multiple: true, class: 'form-control' } %>
+  </div>
+
+
+  <%= f.submit 'Add', class: 'btn btn-default' %>
+<% end %>

@@ -1,0 +1,14 @@
+<%= form_for [@cart_item.store, @cart_item] do |f| %>
+  <%= f.hidden_field :product_id %>
+  <div class="form-group">
+    <label>Count</label>
+    <%= f.text_field :count, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <label>Shipping profile</label>
+    <%= f.select :shipping_profile_id, options_for_select(@cart_item.product.shipping_profiles.all.map { |s| [s.title, s.id] } ), class: 'form-control' %>
+  </div>
+
+  <%= f.submit 'Add', class: 'btn btn-default' %>
+<% end %>

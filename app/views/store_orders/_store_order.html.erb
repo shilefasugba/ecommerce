@@ -1,0 +1,31 @@
+<div class="col-md-6">
+  <h4>
+    <%= store_order.store.name %>
+    <% if store_order.store.user_id == current_user.id %>
+      <%= link_to 'Refund', run_process_store_store_order_path(store_order.store, store_order), class: 'btn btn-default pull-right'%>
+    <% end %>
+  </h4>
+  <dl class="dl-horizontal">
+    <dt>Store contact:</dt>
+    <dd><%= link_to store_order.store.name, '#' %></dd>
+    <dt>Items count:</dt>
+    <dd><%= store_order.cart_items.count %></dd>
+    <dt>Status:</dt>
+    <dd><%= store_order.status %></dd>
+    <dt>Total shipping:</dt>
+    <dd><%= store_order.cal_total_shipping %></dd>
+    <dt>Sub total:</dt>
+    <dd><%= store_order.cal_subtotal %></dd>
+    <dt>Tax total:</dt>
+    <dd><%= store_order.cal_tax_total %></dd>
+    <dt>Total:</dt>
+    <dd><%= store_order.cal_total %></dd>
+  </dl>
+
+  <% store_order.cart_items.each do |cart_item| %>
+    <p>
+      <%= cart_item.product.title %> / Count: <%= cart_item.count %> / Price: <%= cart_item.product.price %> 
+    </p>
+  <% end %>
+  <hr/>
+</div>

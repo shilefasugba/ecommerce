@@ -1,0 +1,9 @@
+<h3 class="page-header">
+  Cart
+  <%= link_to 'Checkout', new_order_path, class: 'btn btn-default pull-right' %>
+</h3>
+
+<% @stores.each do |store| %> 
+  <%= render 'cart_item', store: store %>
+<% end %>
+

@@ -1,0 +1,36 @@
+<div class="col-md-6">
+  <h4>
+    <%= product.title %>
+    <% if @store.present? %>
+      <%= link_to edit_store_product_path(@store, product), class: 'btn btn-default pull-right' do %>
+        Edit
+      <% end %>
+      <%= link_to store_product_path(@store, product), class: 'btn btn-default pull-right', method: :delete do %>
+        Delete
+      <% end %>
+    <% end %>
+    <%= link_to new_store_cart_item_path(product.store, product_id: product.id), class: 'btn btn-default pull-right' do %>
+      Add To Cart
+    <% end %>
+    
+  </h4>
+  <dl class="dl-horizontal">
+    <dt>Store:</dt>
+    <dd><%= product.store.name %></dd>
+    <dt>Category:</dt>
+    <dd><%= product.category.name %></dd>
+    <dt>Description:</dt>
+    <dd><%= product.description %></dd>
+    <dt>Stock count:</dt>
+    <dd><%= product.stock_count %></dd>
+    <dt>Shipping weight lbs:</dt>
+    <dd><%= product.shipping_weight_lbs %></dd>
+    <dt>Price:</dt>
+    <dd><%= product.price %></dd>
+    <dt>Sku:</dt>
+    <dd><%= product.sku %></dd>
+    <dt>Tax:</dt>
+    <dd><%= product.tax %></dd>
+  </dl>
+  <hr/>
+</div>

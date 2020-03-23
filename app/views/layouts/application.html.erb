@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'head' %>
+  </head>
+  <body class="<%= yield(:body_classes) %> <%= controller_name %>">
+    <%= render 'navbar' %>
+    <div class="container-fluid">
+      <div class="row">
+        <%= render 'sidebar' if current_user.present? %>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <%= bootstrap_flash %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

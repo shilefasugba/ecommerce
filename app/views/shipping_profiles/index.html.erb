@@ -1,0 +1,9 @@
+<legend>
+  Shipping profiles
+  <%= link_to new_store_shipping_profile_path(@store), class: 'btn btn-default pull-right' do %>
+    Add.
+  <% end %>
+</legend>
+
+<%= render @shipping_profiles %>
+

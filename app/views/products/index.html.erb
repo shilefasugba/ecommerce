@@ -1,0 +1,11 @@
+<h3 class="page-header">
+  Products
+  <% if @store.present? %>
+    <%= link_to new_store_product_path(@store), class: 'btn btn-default pull-right' do %>
+      Add product
+    <% end %>
+  <% end %>
+</h3>
+
+<%= render @products %>
+
