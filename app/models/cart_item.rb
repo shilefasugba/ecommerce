@@ -8,11 +8,8 @@ class CartItem < ActiveRecord::Base
   belongs_to :shipping_profile
 
   has_one :store, through: :product
-  
-  validates :store_id, presence: true
-  validates :user_id, presence: true
-  validates :shipping_profile_id, presence: true
-  validates :product_id, presence: true
+
+  validates :store_id, :user_id, :shipping_profile_id, :product_id, presence: true
 
   scope :by_user_id, -> (user_id) { where(user_id: user_id) }
   scope :by_order_id, -> (order_id) { where(order_id: order_id) }

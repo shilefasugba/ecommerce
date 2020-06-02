@@ -8,7 +8,7 @@ class ImportProductsController < ApplicationController
     @errors = Product.import(params[:file], @store)
 
     if params[:file].nil? || @errors.any?
-      render 'new'
+      render :new
     else
       redirect_to store_products_path(@store), notice: "Products imported."
     end

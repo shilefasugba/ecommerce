@@ -12,13 +12,8 @@ class Order < ActiveRecord::Base
   has_many :store_orders
   
   validates :stripe_card_token, presence: true, if: :unprocessed?
-  validates :user_id, presence: true
-  validates :billing_address, presence: true
-  validates :shipping_address, presence: true
-  validates :total, presence: true, unless: :unprocessed?
-  validates :total_shipping, presence: true, unless: :unprocessed?
-  validates :subtotal, presence: true, unless: :unprocessed?
-  validates :tax_total, presence: true, unless: :unprocessed?
+  validates :user_id, :billing_address, :shipping_address, presence: true
+  validates :total, :total_shipping, :subtotal, :tax_total, presence: true, unless: :unprocessed?
 
   def processed?
     status == 'processed'

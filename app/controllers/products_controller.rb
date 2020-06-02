@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
     if @product.valid?
       redirect_to store_products_path(@store), notice: 'Product successfully created.'
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to store_products_path(@store), notice: 'Product successfully updated.'
     else
-      render 'edit'
+      render :edit
     end
   end
 

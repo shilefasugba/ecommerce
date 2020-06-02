@@ -9,7 +9,7 @@ class CartItemsController < ApplicationController
     @cart_item = current_user.cart_items.where(product_id: params[:product_id], status: 'in_cart').first_or_initialize
     
     if @cart_item.new_record?
-      render 'new'
+      render :new
     else
       redirect_to edit_cart_item_path(@cart_item)
     end
@@ -25,7 +25,7 @@ class CartItemsController < ApplicationController
     if @cart_item.update(cart_item_params)
       redirect_to products_path, notice: 'Added to the cart.'
     else
-      render 'edit'
+      render :edit
     end
   end
 
@@ -36,7 +36,7 @@ class CartItemsController < ApplicationController
     if @cart_item.save
       redirect_to products_path, notice: 'Added to the cart.'
     else
-      render 'new'
+      render :new
     end
   end
 

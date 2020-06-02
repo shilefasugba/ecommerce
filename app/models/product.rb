@@ -12,16 +12,8 @@ class Product < ActiveRecord::Base
   
   validates :shipping_profiles, length: { minimum: 1 }
   validates :image_urls, length: { maximum: 5 }
-  validates :title, presence: true
-  validates :description, presence: true
-  validates :store_id, presence: true
-  validates :category_id, presence: true
-  validates :stock_count, presence: true
-  validates :shipping_weight_lbs, presence: true
-  validates :price, presence: true
-  validates :sku, presence: true
+  validates :title, :description, :store_id, :category_id, :stock_count, :shipping_weight_lbs, :price, :sku, :tax, presence: true
   validates :slug, presence: true, uniqueness: true
-  validates :tax, presence: true
 
   before_validation :set_fields
 

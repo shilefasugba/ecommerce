@@ -16,7 +16,7 @@ class ShippingProfilesController < ApplicationController
     if @shipping_profile.valid?
       redirect_to store_shipping_profiles_path(@store), notice: 'Shipping profile successfully created.'
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -27,7 +27,7 @@ class ShippingProfilesController < ApplicationController
     if @shipping_profile.update(shipping_profile_params)
       redirect_to store_shipping_profiles_path(@store), notice: 'Shipping profile successfully updated.'
     else
-      render 'edit'
+      render :edit
     end
   end
 

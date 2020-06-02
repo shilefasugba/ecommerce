@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
       
       redirect_to orders_path, notice: 'Success'
     else
-      render 'new'
+      render :new
     end
   end
 

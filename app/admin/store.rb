@@ -51,6 +51,4 @@ ActiveAdmin.register Store do
 
     f.actions
   end
-
-
 end

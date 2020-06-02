@@ -6,10 +6,7 @@ class ShippingProfile < ActiveRecord::Base
   belongs_to :store
   has_many :cart_items
 
-  validates :shipping_type, presence: true
-  validates :base_price, presence: true
-  validates :extra_item, presence: true
-  validates :per_item, presence: true
+  validates :shipping_type, :base_price, :extra_item, :per_item, presence: true
 
   def title 
     result = shipping_type.humanize + ':'

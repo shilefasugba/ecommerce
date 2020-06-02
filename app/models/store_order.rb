@@ -6,12 +6,8 @@ class StoreOrder < ActiveRecord::Base
 
   has_many :cart_items
   has_many :stripe_webhook_events
-  
-  validates :total, presence: true, unless: :unprocessed?
-  validates :total_shipping, presence: true, unless: :unprocessed?
-  validates :store_id, presence: true, unless: :unprocessed?
-  validates :subtotal, presence: true, unless: :unprocessed?
-  validates :tax_total, presence: true, unless: :unprocessed?
+
+  validates :total, :total_shipping, :store_id, :subtotal, :tax_total, presence: true, unless: :unprocessed?
   
   def processed?
     status == 'processed'

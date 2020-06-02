@@ -3,9 +3,7 @@ class Store < ActiveRecord::Base
   
   belongs_to :user
 
-  validates :name, presence: true
-  validates :summary, presence: true
-  validates :stripe_id, presence: true
+  validates :name, :summary, :stripe_id, presence: true
   validates :shipping_profiles, length: { minimum: 1 }
   
   has_many :products
